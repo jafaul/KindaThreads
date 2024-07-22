@@ -286,7 +286,7 @@ Response:
 
 200 OK: Returns comment details.
 
-404 NOT FOUND: Comment/Post/User/Post by User/ does not exist by specified ID
+404 NOT FOUND: Comment/Post/User/Post by User/ does not exist by the specified ID
 
 422 Validation Error: Authorization is required
 
@@ -315,6 +315,7 @@ Description: Get all comments within a specified date range.
 Response:
 
 200 OK: Returns all comments with tying to an authorized user: 
+204 NO CONTENT in case the user doesn't have any comments
 
 ---
 { \
@@ -333,3 +334,4 @@ Description: Get all posts within a specified date range.
 Response:
 
 200 OK: Returns all posts from an authorized specific user by {"blocked": [], "published": []}
+204 NO CONTENT in case the user doesn't have any posts
