@@ -7,7 +7,7 @@
 ### .test.env requirements:
 >  DB_NAME in .test.env must be equal to DB_TEST_NAME from .env
 
-> the rest of the fields must be equally to .env for success connection to test database
+> The rest of the fields in .ent.test must be equal to .env for successful connection to the test database
 
 ---
 ### set up venv
