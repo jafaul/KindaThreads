@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:15.0
+    restart: always
+    ports:
+      - "${DB_PORT}:5432"
+    environment:
+        POSTGRES_USER: ${DB_USERNAME}
+        POSTGRES_PASSWORD: ${DB_PASSWORD}
+        POSTGRES_MULTIPLE_DATABASES: ${DB_NAME}:${DB_PASSWORD},${DB_TEST_NAME}
+
+    env_file:
+      - app/.env
+    volumes:
+      - ./init-multi-postgres-databases.sh:/docker-entrypoint-initdb.d/init-multi-postgres-databases.sh
